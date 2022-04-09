@@ -1,10 +1,12 @@
+import "../styles/header.scss";
+
 const Header = () => {
     return (
-        <header>
+        <header className="App-header" >
             I am the header
         </header>
     );
 }
 
-// export default Header;
+// Exporting via "named export"
 export { Header };
