@@ -1,7 +1,7 @@
 import '../styles/content.scss';
 
 const Card = ({ title, text }) => {
-    // console.log(props);
+    // console.log(DataCollector);
     return (
         <div className="card">
             <div className="card-body">

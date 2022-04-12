@@ -1,7 +1,18 @@
-import fetch from 'node-fetch';
+let myData = []
 
-export default async function DataCollector()  {
+async function DataCollector()  {
     const response = await fetch('https://anime-facts-rest-api.herokuapp.com/api/v1');
-    const issues = await response.json();
-    return issues;
+    const data = await response.json();
+    myData = data;
 }
+
+// (async () => {
+//     const data = await DataCollector();
+//     a = data;
+//     console.log(a);
+// })();
+
+// export default a;
+DataCollector();
+
+export default myData;
