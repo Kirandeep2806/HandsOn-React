@@ -1,18 +1,23 @@
 import '../styles/content.scss';
+import data from './DataCollector';
 
-const Card = ({ title, text }) => {
-    // console.log(DataCollector);
+function Content() {
     return (
-        <div className="card">
-            <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{text}</p>
-                <a href="#" className="btn btn-primary">
-                    Go somewhere
-                </a>
-            </div>
+        <div className='content-root'>
+            {data.data.map(item => {
+                return (
+                    <div className="card">
+                        <div className="card-content">
+                            <p>{item.anime_id}.&nbsp;</p>
+                            <p>{item.anime_name.toUpperCase().replace("_", " ")}</p>
+                        </div>
+                        <img src={item.anime_img} alt="anime" />
+                    </div>
+                    )
+                })
+            }
         </div>
     );
 }
 
-export default Card;
+export default Content;

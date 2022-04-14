@@ -1,15 +1,13 @@
-.card {
-    display: flex;
-    justify-content: center;
-    .card-body {
-        border: 1px solid #ccc;
-        padding: 0 1em 1em 1em;
-        width: 50%;
-        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        &:hover {
-            transform: scale(1.05);
-            transition: all 0.5s ease-in-out;
+.content-root {
+    .card-content {
+        * {
+            display: inline;
+        }
+    }
+    .card {
+        img {
+            width: 400px;
+            height: 400px;
         }
     }
 }
