@@ -1,23 +1,26 @@
 import '../styles/content.scss';
 import data from './DataCollector';
+import React from 'react';
 
-function Content() {
-    return (
-        <div className='content-root'>
-            {data.data.map(item => {
-                return (
-                    <div className="card">
-                        <div className="card-content">
-                            <p>{item.anime_id}.&nbsp;</p>
-                            <p>{item.anime_name.toUpperCase().replace("_", " ")}</p>
+class Content extends React.Component {
+    render() {
+        return (
+            <div className='content-root'>
+                {data.data.map(item => {
+                    return (
+                        <div className="card">
+                            <div className="card-content">
+                                <p>{item.anime_id}.&nbsp;</p>
+                                <p>{item.anime_name.toUpperCase().replace("_", " ")}</p>
+                            </div>
+                            <img src={item.anime_img} alt="anime" />
                         </div>
-                        <img src={item.anime_img} alt="anime" />
-                    </div>
                     )
                 })
-            }
-        </div>
-    );
+                }
+            </div>
+        );
+    }
 }
 
 export default Content;
