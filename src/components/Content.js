@@ -18,11 +18,10 @@ class Content extends React.Component {
                     return (
                         <div className="card">
                             <div className="card-content">
-                                <p>{this.state.name} - </p>
                                 <p>{item.anime_id}.&nbsp;</p>
                                 <p>{item.anime_name.toUpperCase().replaceAll("_", " ")}</p>
                             </div>
-                            <img src={item.anime_img} alt="anime" />
+                            <img src={item.anime_img} alt="anime" onClick={function(){alert("Image is clicked!")}} />
                         </div>
                     )
                 })
