@@ -21,9 +21,9 @@ class Content extends React.Component {
             <div className='content-root'>
                 <p>User is Logged {this.state.isLoggedIn ? "In" : "Out"}</p>
                 {this.state.data.length > 0 ?
-                    this.state.data.map(item => {
+                    this.state.data.map((item, index) => {
                         return (
-                            <div className="card">
+                            <div className="card" key={index} >
                                 <div className="card-content">
                                     <p>{item.anime_id}.&nbsp;</p>
                                     <p>{item.anime_name.toUpperCase().replaceAll("_", " ")}</p>
