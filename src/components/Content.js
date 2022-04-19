@@ -19,8 +19,16 @@ class Content extends React.Component {
                 data: prevState.data
             }))
         }
-        const data = await response.json();
-        data.success === true ? this.setState(prevState => ({ data: data.data, message: prevState.message })) : this.setState(prevState => ({ data: prevState.data, message: "Some error occured!!" }));
+        else if (response.status == 404) {
+            this.setState({
+                message: "Page Does not exist(404 NOT FOUND)",
+                data: [...this.state.data]
+            })
+        }
+        else {
+            const data = await response.json();
+            data.success === true ? this.setState(prevState => ({ data: data.data, message: prevState.message })) : this.setState(prevState => ({ data: prevState.data, message: "Some error occured!!" }));
+        }
     }
 
     render() {
