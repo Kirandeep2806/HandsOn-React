@@ -13,21 +13,13 @@ class Content extends React.Component {
 
     async componentDidMount() {
         const response = await fetch('https://anime-facts-rest-api.herokuapp.com/api/v1').catch(err => console.log(err));
-        if (!response) {
-            this.setState((prevState) => ({
-                message: "Make sure you are connected to the internet",
-                data: prevState.data
-            }))
-        }
-        else if (response.status == 404) {
-            this.setState({
-                message: "Page Does not exist(404 NOT FOUND)",
-                data: [...this.state.data]
-            })
-        }
+        if (!response)
+            this.setState({ message: "Make sure you are connected to the internet" })
+        else if (response.status == 404)
+            this.setState({ message: "Page Does not exist(404 NOT FOUND)" })
         else {
             const data = await response.json();
-            data.success === true ? this.setState(prevState => ({ data: data.data, message: prevState.message })) : this.setState(prevState => ({ data: prevState.data, message: "Some error occured!!" }));
+            data.success == true ? this.setState({ data: data.data }) : this.setState({ message: "Some error occured!!" });
         }
     }
 
