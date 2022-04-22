@@ -2,7 +2,7 @@ import './App.scss';
 import { Header } from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-import FormContainer from './components/FormContainer';
+import FormEmbedder from './components/FormEmbedder';
 
 function App() {
   // let data = myData;
@@ -10,10 +10,10 @@ function App() {
     // You can apply styles on predefined tags but not on custom tags like "Header, Footer" which you created.
     <div className="App">
       <Header />
-      <Content />
       <hr />
-      <FormContainer />
+      <FormEmbedder />
       <hr/>
+      <Content />
       <Footer />
     </div>
   );
