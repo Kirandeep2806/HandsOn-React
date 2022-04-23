@@ -1,3 +1,6 @@
+// import React from "react";
+import DisplayFormFilledData from "./DisplayFormFilledData"
+
 export default function FormContainer() {
     return (
         <form>
@@ -14,11 +17,16 @@ export default function FormContainer() {
             </label>
             <br />
             <label>
-                <input type={"checkbox"} /> Javascript
-                <input type={"checkbox"} /> React
-                <input type={"checkbox"} /> Redux
+                Address : <textarea />
             </label>
             <br />
+            <label>
+                Gender :
+                <input type={"radio"} name="gender" value={"male"} /> Male
+            </label>
+            <label>
+                <input type={"radio"} name="gender" value={"female"} /> Female
+            </label>
         </form>
     )
 }
