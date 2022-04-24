@@ -13,7 +13,7 @@ function App() {
       <Header />
       <hr />
       <FormContainer />
-      <hr/>
+      <hr />
       <Content />
       <Footer />
     </div>
