@@ -44,13 +44,15 @@ export default class FormContainer extends React.Component {
                     Address : <textarea name="address" onChange={this.handleChange} />
                 </label>
                 <br />
-                <label>
-                    Gender :
-                    <input type={"radio"} name="gender" value={"male"} onChange={this.handleChange} /> Male
-                </label>
-                <label>
-                    <input type={"radio"} name="gender" value={"female"} onChange={this.handleChange} /> Female
-                </label>
+                <div onChange={this.handleChange}>
+                    <label>
+                        Gender :
+                        <input type={"radio"} name="gender" value={"male"} /> Male
+                    </label>
+                    <label>
+                        <input type={"radio"} name="gender" value={"female"} /> Female
+                    </label>
+                </div>
                 <br />
                 <div onChange={this.handleChange}>
                     <label>
