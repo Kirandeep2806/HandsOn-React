@@ -2,7 +2,8 @@ import './App.scss';
 import { Header } from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-import FormEmbedder from './components/FormEmbedder';
+import FormContainer from './components/FormContainer';
+
 
 function App() {
   // let data = myData;
@@ -11,7 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <hr />
-      <FormEmbedder />
+      <FormContainer />
       <hr/>
       <Content />
       <Footer />
