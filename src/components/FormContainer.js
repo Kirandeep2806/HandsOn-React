@@ -10,21 +10,26 @@ export default class FormContainer extends React.Component {
             password: '',
             address: '',
             gender: '',
+            lang: [],
         }
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value,
-        })
+        event.target.type === 'checkbox' ?
+            event.target.checked ?
+                this.setState({ lang: [...this.state.lang, event.target.name] })
+                :
+                this.setState({ lang: this.state.lang.filter(item => item != event.target.name) })
+            :
+            this.setState({ [event.target.name]: event.target.value })
     }
 
     render() {
         return (
             <form>
                 <label>
-                    Name : <input type={"text"} onChange={this.handleChange} name='name'  />
+                    Name : <input type={"text"} onChange={this.handleChange} name='name' />
                 </label>
                 <br />
                 <label>
@@ -46,6 +51,20 @@ export default class FormContainer extends React.Component {
                 <label>
                     <input type={"radio"} name="gender" value={"female"} onChange={this.handleChange} /> Female
                 </label>
+                <br />
+                <div onChange={this.handleChange}>
+                    <label>
+                        <input type={"checkbox"} name="python" />Python
+                    </label>
+                    <br />
+                    <label>
+                        <input type={"checkbox"} name="javascript" />JavaScript
+                    </label>
+                    <br />
+                    <label>
+                        <input type={"checkbox"} name="react" />React.js
+                    </label>
+                </div>
 
 
                 <p>Name: {this.state.name}</p>
@@ -53,6 +72,7 @@ export default class FormContainer extends React.Component {
                 <p>Password: {this.state.password}</p>
                 <p>Address: {this.state.address}</p>
                 <p>Gender: {this.state.gender}</p>
+                <p>Language: {this.state.lang.join(', ')}</p>
             </form>
         )
     }
