@@ -1,3 +1,5 @@
+import DisplayFilledData from "./DisplayFilledData";
+
 export default function Form(props) {
     return (
         <form>
@@ -40,14 +42,7 @@ export default function Form(props) {
                     <input type={"checkbox"} name="react" />React.js
                 </label>
             </div>
-
-
-            <p>Name: {props.data.name}</p>
-            <p>Email: {props.data.email}</p>
-            <p>Password: {props.data.password}</p>
-            <p>Address: {props.data.address}</p>
-            <p>Gender: {props.data.gender}</p>
-            <p>Language: {props.data.lang.join(', ')}</p>
+            <DisplayFilledData {...props.data} />
         </form>
     )
 }
