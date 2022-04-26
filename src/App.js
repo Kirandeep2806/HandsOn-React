@@ -10,7 +10,7 @@ function ContentContainer() {
   // let data = myData;
   return (
     // You can apply styles on predefined tags but not on custom tags like "Header, Footer" which you created.
-    <div className="App">
+    <div className="center-content">
       <Header />
       <hr />
       <Content />

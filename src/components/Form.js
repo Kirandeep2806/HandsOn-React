@@ -2,7 +2,7 @@ import DisplayFilledData from "./DisplayFilledData";
 
 export default function Form(props) {
     return (
-        <form>
+        <form className="center-content" >
             <label>
                 Name : <input type={"text"} onChange={props.handleChange} name='name' />
             </label>
