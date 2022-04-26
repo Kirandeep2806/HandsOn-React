@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import FormContainer from './components/FormContainer';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 
 
 function ContentContainer() {
@@ -14,11 +14,12 @@ function ContentContainer() {
       <Header />
       <hr />
       <Content />
+      <hr />
       <Footer />
+      <Link to={"/form"} >Click me to goto Forms</Link>
     </div>
   )
 }
-
 
 
 function App() {
