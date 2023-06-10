@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from './Home';
 
 const Location = () => {
     const [coords, setCoords] = useState(false);
     const [geoData, setGeoData] = useState(null);
+    const apiKey = useContext(UserContext);
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(async (position) => {
-            const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=10&appid=293f292922f11a4efffd648aee55d7af`;
+            const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=10&appid=${apiKey}`;
             setCoords(true);
             const response = await fetch(url).catch(err => console.log("Error at API calls"));
             if(response) {
